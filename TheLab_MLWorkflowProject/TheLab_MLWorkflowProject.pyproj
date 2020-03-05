@@ -23,6 +23,10 @@
   <ItemGroup>
     <Compile Include="TheLab_MLWorkflowProject.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="winequality-red.csv" />
+    <Content Include="winequality-white.csv" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
