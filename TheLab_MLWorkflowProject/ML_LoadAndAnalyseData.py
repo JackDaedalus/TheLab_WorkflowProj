@@ -26,11 +26,13 @@ def ReadDataframe(sFileName):
 
     # Load dataset
     url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
-    arrColNames = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-    sDSClassCol = 'class'
+    # arrColNames = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+    arrColNames = ['fixed acidity','volatile acidity','citric acid','residual sugar','chlorides','free sulfur dioxide','total sulfur dioxide','density','pH','sulphates','alcohol','quality']
+
     # print("\n\tLoading the Dataset from URL : {}..\n".format(url))
     # dataset = pd.read_csv(url, names=arrColNames)
 
+    sDSClassCol = 'quality'
     print("\n\tLoading the Dataset from FILE : {}..\n".format(sFileName))
     dataset = pd.read_csv(sFileName)
 
@@ -59,15 +61,15 @@ def DisplayBasicDataFrameInfo(dataset, datasetDescription, sClass):
 
     # Class distribution - present the count of the number of rows that 
     # belong to each class in the dataset
-    #print("\n\t{} Dataset Class Distribution : \n".format(datasetDescription))
-    #print(dataset.groupby(sClass).size())
+    print("\n\t{} Dataset Class Distribution : \n".format(datasetDescription))
+    print(dataset.groupby(sClass).size())
 
     # Info
     print("\n\t{} Dataset 'Info()' : \n".format(datasetDescription))
     print(dataset.info())
 
     # Check for Correlation before all features converted to numeric
-    # CheckDatasetForCorrelation(dataset, datasetDescription + " (BEFORE Categorical Conversion)")
+    CheckDatasetForCorrelation(dataset, datasetDescription + " (BEFORE Categorical Conversion)")
 
 
 
