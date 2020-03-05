@@ -47,10 +47,10 @@ from sklearn.svm import SVC
 
 
 ## Module Imports for Python GUI widgets
-from WineQuality_GUI import *
+from ML_GUI import *
 
 ## Module Imports for custom Python code to read and analyse dataset
-from WineQuality_LoadandAnalyseData import *
+from ML_LoadAndAnalyseData import *
 
 ## Module Imports for custom Python code to pre-process dataset before modelling
 #from WineQuality_DataPreProcessing import *
