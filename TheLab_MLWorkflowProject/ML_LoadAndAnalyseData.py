@@ -95,18 +95,37 @@ def CheckDatasetForCorrelation(dataset, dataDescription):
 
 
 
-def DisplayVisualDataFrameInfo(dataset, dataDescription):
+def DisplayVisualDataFrameInfo(dataframe, dataDescription):
     
-    # Display Histograms for each attribute in dataset
-    dataset.hist()
+    ## Display Histograms for each attribute in dataset
+    dataframe.hist()
     plt.show()
 
-    # box and whisker plots
-    dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+
+
+    ## box and whisker plots
+    dataframe.plot(kind='box', subplots=True, layout=(4,3), sharex=False, sharey=False)
     plt.show()
 
-    # scatter plot matrix
-    scatter_matrix(dataset)
+
+
+    # scatter plot matrix - includes additional formatting to improve presentation
+    sm = scatter_matrix(dataframe, alpha=0.2, figsize=(6, 6), diagonal='kde')
+
+    #Change label rotation
+    [s.xaxis.label.set_rotation(45) for s in sm.reshape(-1)]
+    [s.yaxis.label.set_rotation(0) for s in sm.reshape(-1)]
+    
+    #May need to offset label when rotating to prevent overlap of figure
+    [s.get_yaxis().set_label_coords(-0.7,0.5) for s in sm.reshape(-1)]
+
+    #Hide all ticks
+    [s.set_xticks(()) for s in sm.reshape(-1)]
+    [s.set_yticks(()) for s in sm.reshape(-1)]
+
+
+
+
     plt.show()
 
 

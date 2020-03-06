@@ -81,7 +81,7 @@ def Main_WineML():
     # Display visual representations of the dataset attributes
     # These representations will also help with decisions on pre-modellling
     # data manipulation and algorithm selection / execution
-    # DisplayVisualDataFrameInfo(df_Iris, sDatasetDescription)
+    DisplayVisualDataFrameInfo(df_WineQuality, sDatasetDescription)
 
     # Amend the Dataset so that modelling algorithms can be successfully applied
     #df_FinalWineQuality = PreSplitDataManipulation(df_WineQuality, sDatasetDescription, dfColNames, sDSClassCol)
